@@ -1,0 +1,147 @@
+/* style.css */
+body {
+    font-family:'times new roman', sans-serif, serif,bold; /* font buat nama item dan harga*/;
+    font-size: 15px;
+    margin: 5px;
+    padding: 10px;
+    background-color: #ffffff; 
+    /*background-image: url('https://i.pinimg.com/originals/01/50/fe/0150fe7663812aa29410a1bd637470d3.jpg');*/ 
+    background-size: cover;
+}
+.container {
+    width: 100%; /*ukuran dari tampilan kotak di dlm web*/
+    /*max-width: 1200px;*/
+    margin: 0 auto;
+    padding: 5px;/*5px*/
+    /*background-color: white;*/
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.layout { 
+    display: flex;
+    justify-content: space-between;
+}
+ .left{ 
+    width: 35%;
+    padding:20px;
+    border-right: 2px solid #ddd;
+}
+.right{
+    width:65%;
+    padding:20px
+}
+/* Tampilan kategori */
+#kategoriList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.kategoriItem {
+    margin:  0 10px;
+    padding: 0 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0px; /*jarak antar kolom*/
+    padding: 5px;/*15px*/
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    width: 150px; /*ukuran kotak item 200px*/
+    height: auto;/*ukuran kotak item 200px*/
+    box-sizing: border-box;
+}
+.kategoriItem:hover {
+    background-color: #007bff;
+    color: white;
+}
+/* Tampilan produk yang bisa dipilih */
+#produkList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk setiap produk yang diklik */
+.produkItem {
+    background-color: transparent; /* warna background kotak item produk '#kode warna*/
+    color: black;
+    margin: 0px; /*jarak antar kolom*/
+    padding: 5px;/*15px*/
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    width: 200px; /*ukuran kotak item 200px*/
+    height: 200px;/*ukuran kotak item 200px*/
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.produkImage { 
+    width: 100;  /* 100%Menetapkan lebar kotak gambar agar sesuai dengan lebar produk */
+    height:auto;/*auto Menetapkan tinggi kotak gambar height:150px; */
+    object-fit: cover;
+    overflow: hidden;
+}    
+.produkitem .produknama{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.produkItem:hover {
+    background-color: #007bff;
+}
+/* Tabel belanja */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #000000; 
+    padding: 10px; /* ukuran kolom  */
+    text-align: center; /* posisi text*/
+    font-weight: bold;
+    border-width: 3px; /* menetapkan besar garis tabel*/
+}
+
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#selesaiPembayaran {
+    width: 100%;
+    background-color: #007bff;
+}
+
+#selesaiPembayaran:disabled {
+    background-color: #cccccc;
+}
+/* Media Query untuk layar lebih kecil (tablet) */
+@media (max-width: 768px) {
+    .kategori {
+        width: 120px; /* Lebih kecil di tablet */
+    }
+}
+
+/* Media Query untuk layar lebih kecil (smartphone) */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column; /* Menyusun kategori secara vertikal */
+    }
+    .kategori {
+        width: 100%; /* Lebar 100% pada layar kecil */
+        margin: 10px 0; /* Jarak vertikal antar kategori */
+    }
+}
