@@ -1,7 +1,6 @@
 /* style.css */
 body {
     font-family:'times new roman', sans-serif, serif,bold; /* font buat nama item dan harga*/;
-    font-size: 15px;
     margin: 5px;
     padding: 10px;
     background-color: #ffffff; 
@@ -22,6 +21,29 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
 }
+/* Membuat judul Daftar Belanja tetap di atas saat di-scroll */
+h2 {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Pastikan berada di atas elemen lain */
+    text-align: center;
+}
+
+/* Membuat Total Harga tetap di atas saat di-scroll */
+h3 {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    position: sticky;
+    top: 40px; /* Posisi setelah header sebelumnya */
+    z-index: 999;
+    text-align: center;
+}
 .layout { 
     display: flex;
     justify-content: space-between;
@@ -31,6 +53,7 @@ h1 {
     padding:20px;
     border-right: 2px solid #ddd;
 }
+ 
 .right{
     width:65%;
     padding:20px
@@ -55,6 +78,8 @@ h1 {
     width: 150px; /*ukuran kotak item 200px*/
     height: auto;/*ukuran kotak item 200px*/
     box-sizing: border-box;
+    font-size: 16px;
+
 }
 .kategoriItem:hover {
     background-color: #007bff;
@@ -65,7 +90,8 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 /* Gaya untuk setiap produk yang diklik */
@@ -78,15 +104,17 @@ h1 {
     text-align: center;
     cursor: pointer;
     width: 200px; /*ukuran kotak item 200px*/
-    height: 200px;/*ukuran kotak item 200px*/
+    height: 350px;/*ukuran kotak item 200px*/
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
 }
 .produkImage { 
-    width: 100;  /* 100%Menetapkan lebar kotak gambar agar sesuai dengan lebar produk */
+    width: 100%;  /* 100%Menetapkan lebar kotak gambar agar sesuai dengan lebar produk */
     height:auto;/*auto Menetapkan tinggi kotak gambar height:150px; */
     object-fit: cover;
     overflow: hidden;
@@ -94,25 +122,36 @@ h1 {
 .produkitem .produknama{
     width: 100%;
     text-align: center;
-    margin-top: 10px;
+    margin-top:5px;
+    padding-top: 0px;
+}
+.produkItem .hargaProduk{
+    font-size: 20px;
+    font-weight: bold;
+    color:#333
 }
 .produkItem:hover {
     background-color: #007bff;
 }
 /* Tabel belanja */
-table {
+ table { 
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0px;
     border-collapse: collapse;
+    width: 100% auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-y: auto; /*Menambahkan scroll vertikal jika tabel terlalu panjang */
+   
 }
 
-table th, table td {
+ table th, table td { 
     border: 1px solid #000000; 
-    padding: 10px; /* ukuran kolom  */
-    text-align: center; /* posisi text*/
-    font-weight: bold;
-    border-width: 3px; /* menetapkan besar garis tabel*/
-}
+    padding: 10px;  /*ukuran kolom  */
+    text-align: center; /*posisi text*/
+    font-weight: bold; 
+    border-width: 3px; /*menetapkan besar garis tabel */
+ } 
 
 h3 {
     text-align: center;
